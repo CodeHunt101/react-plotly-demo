@@ -8,11 +8,14 @@
     "test:ci": "jest --ci"
   },
   "dependencies": {
-    "next": "latest",
+    "ag-grid-community": "^32.3.3",
+    "ag-grid-react": "^32.3.3",
+    "next": "^15.0.4",
     "plotly.js": "^2.35.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-plotly.js": "^2.6.0",
+    "react-select": "^5.8.3",
     "server-only": "^0.0.1"
   },
   "devDependencies": {

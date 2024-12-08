@@ -5,7 +5,7 @@ import { useState } from 'react'
 // Dynamically import Plotly to avoid SSR issues
 const Plot = dynamic(() => import('react-plotly.js'), { ssr: false })
 
-const About = () => {
+const PlotlyComponent = () => {
   // Initialize marker colors state
   const [markerColors, setMarkerColors] = useState(['blue', 'blue', 'blue'])
 
@@ -68,4 +68,4 @@ const About = () => {
   )
 }
 
-export default About
+export default PlotlyComponent
