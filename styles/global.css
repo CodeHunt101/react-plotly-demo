@@ -65,3 +65,7 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
 }
+
+.js-plotly-plot .plotly div.modebar-group {
+  @apply flex;
+}

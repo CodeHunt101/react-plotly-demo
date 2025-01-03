@@ -1,9 +1,10 @@
 'use client'
 import dynamic from 'next/dynamic'
+import { Config, Layout } from 'plotly.js'
 import { useState } from 'react'
 
 // Dynamically import Plotly to avoid SSR issues
-const Plot = dynamic(() => import('react-plotly.js'), { ssr: false })
+const Plot = dynamic(() => import('react-plotly.js'), { ssr: false,  loading: () => <div className="h-64 w-full animate-pulse bg-gray-200" /> })
 
 const PlotlyComponent1 = () => {
   // Initialize marker colors state
@@ -31,7 +32,7 @@ const PlotlyComponent1 = () => {
 
   return (
     <Plot
-    config={{responsive: true}}
+    config={{responsive: true} as Partial<Config>}
       data={[
         {
           x: [1, 2, 3],
@@ -54,8 +55,8 @@ const PlotlyComponent1 = () => {
         },
       ]}
       layout={{
-        // width: 320 * 2, // 320 * 4
-        // height: 240 * 2, // 240 * 4
+        height: 240 * 2, // 240 * 4
+        
         title: { text: 'A Fancy Plot' },
         xaxis: {
           showgrid: false,
@@ -63,7 +64,7 @@ const PlotlyComponent1 = () => {
         yaxis: {
           showgrid: false,
         },
-      }}
+      } as Partial<Layout>}
       onClick={handlePlotClick} // Attach the click handler
     />
   )

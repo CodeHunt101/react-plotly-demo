@@ -5,7 +5,7 @@ import PlotlyComponent4 from "./PlotComponent4"
 
 const Plotly = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div className="">
     <PlotlyComponent1 />
     <PlotlyComponent2 />
     <PlotlyComponent3 />

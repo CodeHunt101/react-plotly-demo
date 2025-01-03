@@ -5,7 +5,7 @@ import {  Data, Layout } from 'plotly.js'
 import { useState } from 'react'
 
 // Dynamically import Plotly to avoid SSR issues
-const Plot = dynamic(() => import('react-plotly.js'), { ssr: false })
+const Plot = dynamic(() => import('react-plotly.js'), { ssr: false,  loading: () => <div className="h-64 w-full animate-pulse bg-gray-200" /> })
 
 const PlotlyComponent3 = () => {
   // Define the three traces as per your specifications

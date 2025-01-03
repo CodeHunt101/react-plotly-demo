@@ -1,26 +1,13 @@
 'use client'
 
-import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
-import { ChartConfig, ChartContainer } from '@/components/ui/chart';
 import dynamic from 'next/dynamic';
 import { Config, Data } from 'plotly.js';
 
-const Plot = dynamic(() => import('react-plotly.js'), { ssr: false })
+const Plot = dynamic(() => import('react-plotly.js'), { ssr: false,  loading: () => <div className="h-64 w-full animate-pulse bg-gray-200" /> })
 
 
 
 const PlotlyComponent4 = () => {
-
-  const chartConfig = {
-    desktop: {
-      label: "Desktop",
-      color: "hsl(var(--chart-1))",
-    },
-    mobile: {
-      label: "Mobile",
-      color: "hsl(var(--chart-2))",
-    },
-  } satisfies ChartConfig
 
   const data: Data[] = [
     {
@@ -104,21 +91,14 @@ const PlotlyComponent4 = () => {
   };
 
   return (
-    <Card className="w-full max-w-2xl">
-      <CardHeader>
-        <CardTitle>Monthly Performance</CardTitle>
-      </CardHeader>
-      <CardContent>
-      <ChartContainer config={chartConfig}>
+    
           <Plot
             data={data}
             layout={layout}
             config={config}
             className="w-full h-full"
           />
-        </ChartContainer>
-      </CardContent>
-    </Card>
+  
   );
 };
 

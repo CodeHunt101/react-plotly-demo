@@ -5,7 +5,7 @@ import { Layout, PieData } from 'plotly.js'
 import { useState } from 'react'
 
 // Dynamically import Plotly to avoid SSR issues
-const Plot = dynamic(() => import('react-plotly.js'), { ssr: false })
+const Plot = dynamic(() => import('react-plotly.js'), { ssr: false,  loading: () => <div className="h-64 w-full animate-pulse bg-gray-200" /> })
 
 const PlotlyComponent2 = () => {
   // Dummy data for the pie chart
