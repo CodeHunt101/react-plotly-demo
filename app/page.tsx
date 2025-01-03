@@ -5,5 +5,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <PlotlyComponent />
+  return <><div className="text-red-700 font-bold">Plotly</div><PlotlyComponent /></>
 }
